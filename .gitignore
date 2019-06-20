@@ -1,0 +1,8 @@
+node_modules
+server/config/dev.js
+client/dist/bundle.js
+.vscode/
+npm-debug.log
+.DS_Store
+*.env
+*.env.development
