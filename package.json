@@ -1,0 +1,23 @@
+{
+  "name": "music-player-service",
+  "version": "1.0.0",
+  "description": "music player service for SoundCloud song page",
+  "main": "./client/index.jsx",
+  "engines": {
+    "node": ">= 12.4.0",
+    "npm": ">= 6.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sosacloud/music-player-service.git"
+  },
+  "author": "underthecode",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sosacloud/music-player-service/issues"
+  },
+  "homepage": "https://github.com/sosacloud/music-player-service#readme"
+}
