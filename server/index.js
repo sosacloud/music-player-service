@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 const db = require('../database/index');
 
 const app = express();
@@ -11,9 +12,9 @@ app.use(
   })
 );
 
-app.use(express.static(__dirname + '../client/dist'));
+app.use('/', express.static(path.join(__dirname, '../client/dist')));
 
-app.get('/', (req, res) => {
+app.get('/api/songs', (req, res) => {
   res.sendStatus(200);
 });
 
