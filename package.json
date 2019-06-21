@@ -9,10 +9,10 @@
   },
   "scripts": {
     "db:dev": "mysql -u root < schema.sql",
+    "seed:dev": "node database/seed.js",
     "start:dev": "nodemon server/index.js",
     "build:dev": "webpack -d --watch",
-    "seed:dev": "node database/seed.js",
-    "dev": "concurrently \"npm run db:dev\" \"npm run start:dev\" \"npm run build:dev\" \"npm run seed:dev\"",
+    "dev": "concurrently \"npm run db:dev\" \"npm run seed:dev\" \"npm run start:dev\" \"npm run build:dev\"",
     "start": "node server/index.js",
     "heroku-postbuild": "webpack -p"
   },
