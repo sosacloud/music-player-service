@@ -14,8 +14,16 @@ app.use(
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-app.get('/api/songs', (req, res) => {
-  res.sendStatus(200);
+app.get('/api/songs/:id', (req, res) => {
+  const id = req.params.id;
+  // console.log('THIS IS ID', req.params.id);
+  db.Songs.findByPk(id)
+    .then(data => {
+      res.send(data).status(200);
+    })
+    .catch(err => {
+      res.send(err).status(500);
+    });
 });
 
 const PORT = process.env.PORT || 3003;
