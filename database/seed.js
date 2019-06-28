@@ -25,6 +25,7 @@ for (let i = 0; i <= 99; i++) {
   db.Songs.create({
     song_artist: faker.internet.userName(),
     song_title: faker.lorem.words(),
+    song_album: `${faker.random.word()} ${faker.random.word()}`,
     song_url: songs[randomNum(0, 10)], // AWS S3 url
     user: faker.internet.userName(), // use Juan service
     user_comment: faker.lorem.sentence(), // use Juan service

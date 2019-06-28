@@ -8,6 +8,7 @@ class MusicPlayer extends React.Component {
     this.state = {
       songArtist: '',
       songTitle: '',
+      songAlbum: '',
       songURL: '',
       user: '',
       userComment: '',
@@ -32,6 +33,7 @@ class MusicPlayer extends React.Component {
             songLength: audio.duration + 1,
             songArtist: res.data.song_artist,
             songTitle: res.data.song_title,
+            songAlbum: res.data.song_album,
             songURL: audio,
             user: res.data.user,
             userComment: res.data.user_comment,
@@ -58,9 +60,7 @@ class MusicPlayer extends React.Component {
           <div className="song-info">
             <div className="song-artist-album">{this.state.songArtist}</div>
             <div className="song-title">{this.state.songTitle}</div>
-            <div className="song-titleartist-album">
-              NEED TO ADD song_album STATE
-            </div>
+            <div className="song-titleartist-album">{this.state.songAlbum}</div>
           </div>
 
           <img className="song-thumbnail" src={this.state.songThumbnail} />

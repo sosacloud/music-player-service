@@ -18,6 +18,7 @@ const Songs = db.define(
   {
     song_artist: Sequelize.STRING,
     song_title: Sequelize.STRING,
+    song_album: Sequelize.STRING,
     song_url: Sequelize.STRING, // AWS S3
     user: Sequelize.STRING, // call to Juan's service
     user_comment: Sequelize.STRING, // call to Juan's service
