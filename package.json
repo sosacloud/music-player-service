@@ -37,7 +37,7 @@
     "nodemon": "^1.19.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "sequelize": "^5.8.12"
+    "sequelize": "^5.9.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
