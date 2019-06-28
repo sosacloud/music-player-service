@@ -27,7 +27,7 @@ class MusicPlayer extends React.Component {
       .get(`/api/songs/1`)
       .then(res => {
         console.log(res.data);
-        let audio = new Audio(res.data['song_url']);
+        const audio = new Audio(res.data['song_url']);
         audio.addEventListener('loadedmetadata', () => {
           this.setState({
             songLength: audio.duration + 1,
@@ -47,7 +47,7 @@ class MusicPlayer extends React.Component {
         });
       })
       .catch(err => {
-        console.log(err, 'client: GET not working');
+        throw err;
       });
   }
 
