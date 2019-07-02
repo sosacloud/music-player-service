@@ -1,4 +1,5 @@
 import React from 'react';
+import css from '../styles/MusicPlayer.css';
 import axios from 'axios';
 
 let audio;
@@ -31,7 +32,7 @@ class MusicPlayer extends React.Component {
     axios
       .get(`/api/songs/1`)
       .then(res => {
-        console.log(res.data);
+        console.log('RES DATA', res.data);
         audio = new Audio(res.data['song_url']);
         audio.addEventListener('loadedmetadata', () => {
           this.setState({
@@ -91,16 +92,20 @@ class MusicPlayer extends React.Component {
     return (
       <div>
         <div className="music-player">
-          <button
-            className="song-button"
-            src={this.state.songButton}
-            onClick={this.clickPlay}
-          />
+          <div className="button-grid">
+            <button
+              className="play-button"
+              src={this.state.songButton}
+              onClick={this.clickPlay}
+            />
+          </div>
 
           <div className="song-info">
             <div className="song-artist-album">{this.state.songArtist}</div>
             <div className="song-title">{this.state.songTitle}</div>
-            <div className="song-album">In album: {this.state.songAlbum}</div>
+            <div className="song-artist-album">
+              In album: {this.state.songAlbum}
+            </div>
           </div>
 
           <img className="song-thumbnail" src={this.state.songThumbnail} />

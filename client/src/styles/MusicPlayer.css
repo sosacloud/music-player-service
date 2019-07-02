@@ -1,0 +1,65 @@
+.music-player {
+  background: linear-gradient(to right, #f2f2f2, rgb(99, 81, 67));
+  display: grid;
+  grid-template-columns: 30px 10px 65px 500px 150px 60px 350px 25px;
+  grid-template-rows: 30px 65px 200px 56px 30px 30px;
+  min-width: 800px;
+  max-width: 1200px;
+  margin-top: 45px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button-grid {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.play-button {
+  width: 65px;
+  height: 65px;
+}
+
+.play-button:hover {
+  cursor: pointer;
+}
+
+.song-info {
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+}
+
+.song-artist-album {
+  align-self: flex-start;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: rgb(204, 204, 204);
+  cursor: pointer;
+  font-family: 'Interstate', 'Lucida Grande', 'Lucida Sans Unicode',
+    'Lucida Sans', 'Garuda', Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+  padding: 2px 7px 3px;
+}
+
+.song-title {
+  align-self: flex-start;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: rgb(204, 204, 204);
+  font-family: 'Interstate', 'Lucida Grande', 'Lucida Sans Unicode',
+    'Lucida Sans', 'Garuda', Verdana, Tahoma, sans-serif;
+  font-weight: 100;
+  font-size: 24px;
+  padding: 4px 7px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.song-thumbnail {
+  align-self: stretch;
+  justify-self: stretch;
+  grid-column: 7 / 8;
+  grid-row: 2 / 6;
+  cursor: pointer;
+}
