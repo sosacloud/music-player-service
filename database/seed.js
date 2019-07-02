@@ -30,7 +30,7 @@ for (let i = 0; i <= 99; i++) {
     user: faker.internet.userName(), // use Juan service
     user_comment: faker.lorem.sentence(), // use Juan service
     song_release: faker.date.past(), // X days ago
-    song_tags: `${faker.random.word()} & ${faker.random.word()}`,
+    song_tags: `${faker.random.word()}`,
     song_length: faker.random.number({ min: 60, max: 360 }), // render nice date format on client
     song_thumbnail: faker.image.abstract()
   });

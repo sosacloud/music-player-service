@@ -98,6 +98,7 @@ class MusicPlayer extends React.Component {
               src={this.state.songButton}
               onClick={this.clickPlay}
             />
+            {this.state.songButton}
           </div>
 
           <div className="song-info">
@@ -109,6 +110,14 @@ class MusicPlayer extends React.Component {
           </div>
 
           <img className="song-thumbnail" src={this.state.songThumbnail} />
+
+          <div className={'date-tag-grid'}>
+            <div className={'song-release'}>{this.state.songRelease}</div>
+          </div>
+
+          <div className={'date-tag-grid'}>
+            <div className={'song-tags'}># {this.state.songTags}</div>
+          </div>
         </div>
       </div>
     );
