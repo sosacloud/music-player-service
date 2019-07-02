@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+let audio;
+
 class MusicPlayer extends React.Component {
   constructor(props) {
     super(props);
@@ -18,8 +20,11 @@ class MusicPlayer extends React.Component {
       songThumbnail: '',
       songID: 1,
       songCurrentTime: 0,
-      songPlay: false
+      songPlay: false,
+      songButton: 'play'
     };
+
+    this.clickPlay = this.clickPlay.bind(this);
   }
 
   componentDidMount() {
@@ -27,7 +32,7 @@ class MusicPlayer extends React.Component {
       .get(`/api/songs/1`)
       .then(res => {
         console.log(res.data);
-        const audio = new Audio(res.data['song_url']);
+        audio = new Audio(res.data['song_url']);
         audio.addEventListener('loadedmetadata', () => {
           this.setState({
             songLength: audio.duration + 1,
@@ -51,16 +56,51 @@ class MusicPlayer extends React.Component {
       });
   }
 
+  clickPlay(event) {
+    if (!this.state.songPlay) {
+      audio.play();
+      this.setState({
+        songButton: 'pause',
+        songPlay: true
+      });
+
+      this.songTime = setInterval(() => {
+        this.setState({
+          songCurrentTime: audio.currentTime
+        });
+
+        if (audio.ended) {
+          this.setState({
+            songButton: 'play',
+            songPlay: false
+          });
+          clearInterval(this.songTime);
+        }
+      }, 1000);
+    } else {
+      audio.pause();
+      this.setState({
+        songButton: 'play',
+        songPlay: false
+      });
+      clearInterval(this.songTime);
+    }
+  }
+
   render() {
     return (
       <div>
         <div className="music-player">
-          <button className="button">Play</button>
+          <button
+            className="song-button"
+            src={this.state.songButton}
+            onClick={this.clickPlay}
+          />
 
           <div className="song-info">
             <div className="song-artist-album">{this.state.songArtist}</div>
             <div className="song-title">{this.state.songTitle}</div>
-            <div className="song-titleartist-album">{this.state.songAlbum}</div>
+            <div className="song-album">In album: {this.state.songAlbum}</div>
           </div>
 
           <img className="song-thumbnail" src={this.state.songThumbnail} />
