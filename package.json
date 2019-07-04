@@ -4,8 +4,8 @@
   "description": "music player service for SoundCloud song page",
   "main": "./client/index.jsx",
   "engines": {
-    "node": ">= 12.5.0",
-    "npm": ">= 6.9.2"
+    "node": ">= 12.6.0",
+    "npm": ">= 6.10.0"
   },
   "scripts": {
     "db:dev": "mysql -u root < schema.sql",
