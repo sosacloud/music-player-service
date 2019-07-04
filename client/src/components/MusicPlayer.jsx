@@ -25,12 +25,17 @@ class MusicPlayer extends React.Component {
       songButton: 'play'
     };
 
+    this.getSong = this.getSong.bind(this);
     this.clickPlay = this.clickPlay.bind(this);
     this.measureSongDuration = this.measureSongDuration.bind(this);
     this.measureCurrentDuration = this.measureCurrentDuration.bind(this);
   }
 
   componentDidMount() {
+    this.getSong();
+  }
+
+  getSong() {
     axios
       .get(`/api/songs/1`)
       .then(res => {
