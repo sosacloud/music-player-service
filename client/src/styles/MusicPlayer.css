@@ -1,5 +1,5 @@
 .music-player {
-  background: linear-gradient(to right, #f2f2f2, rgb(99, 81, 67));
+  background: linear-gradient(to right, #f2f2f2, #2b231d);
   display: grid;
   grid-template-columns: 30px 10px 65px 500px 150px 60px 350px 25px;
   grid-template-rows: 30px 65px 200px 56px 30px 30px;
@@ -34,8 +34,8 @@
 
 .song-artist-album {
   align-self: flex-start;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: rgb(204, 204, 204);
+  background-color: #000000cc;
+  color: #cccccc;
   cursor: pointer;
   font-family: 'Interstate', 'Lucida Grande', 'Lucida Sans Unicode',
     'Lucida Sans', 'Garuda', Verdana, Tahoma, sans-serif;
@@ -45,8 +45,8 @@
 
 .song-title {
   align-self: flex-start;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: rgb(204, 204, 204);
+  background-color: #000000cc;
+  color: #cccccc;
   font-family: 'Interstate', 'Lucida Grande', 'Lucida Sans Unicode',
     'Lucida Sans', 'Garuda', Verdana, Tahoma, sans-serif;
   font-weight: 100;
@@ -73,7 +73,7 @@
 }
 
 .song-release {
-  color: #fff;
+  color: #ffffff;
   font-family: 'Interstate', 'Lucida Grande', 'Lucida Sans Unicode',
     'Lucida Sans', 'Garuda', 'Verdana', 'Tahoma, sans-serif';
   font-weight: 100;
@@ -83,12 +83,44 @@
 .song-tags {
   padding: 5px 7px;
   /* background: #999; */
-  /* border: 1px solid #999; */
+  /* border: 1px solid #999999; */
   /* border-radius: 20px; */
   font-weight: 100;
   font-size: 16px;
   line-height: 85px;
-  color: #fff;
+  color: #ffffff;
   font-family: 'Interstate', 'Lucida Grande', 'Lucida Sans Unicode',
     'Lucida Sans', 'Garuda', 'Verdana', 'Tahoma, sans-serif';
+}
+
+.duration-grid {
+  grid-column: 2 / 6;
+  grid-row: 4 / 5;
+  display: flex;
+  flex-direction: column;
+  align-self: end;
+}
+
+.song-current-time {
+  align-self: flex-start;
+  background-color: #000000cc;
+  color: #cccccc;
+  cursor: pointer;
+  font-family: 'Interstate', 'Lucida Grande', 'Lucida Sans Unicode',
+    'Lucida Sans', 'Garuda', 'Verdana', 'Tahoma, sans-serif';
+  font-size: 11px;
+  position: absolute;
+  z-index: 1;
+}
+
+.song-length {
+  align-self: flex-end;
+  background-color: #000000cc;
+  color: #cccccc;
+  cursor: pointer;
+  font-family: 'Interstate', 'Lucida Grande', 'Lucida Sans Unicode',
+    'Lucida Sans', 'Garuda', 'Verdana', 'Tahoma, sans-serif';
+  font-size: 11px;
+  position: absolute;
+  z-index: 1;
 }

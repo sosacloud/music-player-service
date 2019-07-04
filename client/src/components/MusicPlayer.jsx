@@ -26,6 +26,8 @@ class MusicPlayer extends React.Component {
     };
 
     this.clickPlay = this.clickPlay.bind(this);
+    this.measureSongDuration = this.measureSongDuration.bind(this);
+    this.measureCurrentDuration = this.measureCurrentDuration.bind(this);
   }
 
   componentDidMount() {
@@ -88,6 +90,22 @@ class MusicPlayer extends React.Component {
     }
   }
 
+  measureSongDuration(songLength) {
+    const mins = Math.floor(songLength / 60);
+    const secs = (songLength - mins * 60).toString().substr(0, 2);
+    const duration = `${mins}:${secs < 10 ? '0' + secs : secs}`;
+    return duration;
+  }
+
+  measureCurrentDuration(songCurrentTime) {
+    const currentMin = parseInt(songCurrentTime / 60) % 60;
+    const currentSec = (songCurrentTime % 60).toFixed();
+    const currentDuration = `${currentMin}:${
+      currentSec < 10 ? '0' + currentSec : currentSec
+    }`;
+    return currentDuration;
+  }
+
   render() {
     return (
       <div>
@@ -117,6 +135,16 @@ class MusicPlayer extends React.Component {
 
           <div className={'date-tag-grid'}>
             <div className={'song-tags'}># {this.state.songTags}</div>
+          </div>
+
+          <div className={'duration-grid'}>
+            <div className={'song-current-time'}>
+              {this.measureCurrentDuration(this.state.songCurrentTime)}
+            </div>
+
+            <div className={'song-length'}>
+              {this.measureSongDuration(this.state.songLength)}
+            </div>
           </div>
         </div>
       </div>
