@@ -2,6 +2,8 @@ import React from 'react';
 import css from '../styles/MusicPlayer.css';
 import axios from 'axios';
 
+import SongBars from './SongBars.jsx';
+
 let audio;
 
 class MusicPlayer extends React.Component {
@@ -22,7 +24,8 @@ class MusicPlayer extends React.Component {
       songID: 1,
       songCurrentTime: 0,
       songPlay: false,
-      songButton: 'play'
+      songButton:
+        'https://music-player-service.s3-us-west-1.amazonaws.com/play-button.png'
     };
 
     this.getSong = this.getSong.bind(this);
@@ -68,7 +71,8 @@ class MusicPlayer extends React.Component {
     if (!this.state.songPlay) {
       audio.play();
       this.setState({
-        songButton: 'pause',
+        songButton:
+          'https://music-player-service.s3-us-west-1.amazonaws.com/pause-button.png',
         songPlay: true
       });
 
@@ -79,7 +83,8 @@ class MusicPlayer extends React.Component {
 
         if (audio.ended) {
           this.setState({
-            songButton: 'play',
+            songButton:
+              'https://music-player-service.s3-us-west-1.amazonaws.com/play-button.png',
             songPlay: false
           });
           clearInterval(this.songTime);
@@ -88,7 +93,8 @@ class MusicPlayer extends React.Component {
     } else {
       audio.pause();
       this.setState({
-        songButton: 'play',
+        songButton:
+          'https://music-player-service.s3-us-west-1.amazonaws.com/play-button.png',
         songPlay: false
       });
       clearInterval(this.songTime);
@@ -116,12 +122,11 @@ class MusicPlayer extends React.Component {
       <div>
         <div className="music-player">
           <div className="button-grid">
-            <button
-              className="play-button"
+            <img
+              className="song-button"
               src={this.state.songButton}
               onClick={this.clickPlay}
             />
-            {this.state.songButton}
           </div>
 
           <div className="song-info">
@@ -149,6 +154,10 @@ class MusicPlayer extends React.Component {
 
             <div className={'song-length'}>
               {this.measureSongDuration(this.state.songLength)}
+            </div>
+
+            <div>
+              <SongBars />
             </div>
           </div>
         </div>

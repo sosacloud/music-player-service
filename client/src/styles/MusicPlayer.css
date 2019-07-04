@@ -15,13 +15,9 @@
   grid-row: 2 / 3;
 }
 
-.play-button {
-  width: 65px;
-  height: 65px;
-}
-
-.play-button:hover {
-  cursor: pointer;
+.song-button {
+  width: 70px;
+  height: 70px;
 }
 
 .song-info {
