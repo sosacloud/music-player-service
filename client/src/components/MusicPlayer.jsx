@@ -46,7 +46,6 @@ class MusicPlayer extends React.Component {
         audio = new Audio(res.data['song_url']);
         audio.addEventListener('loadedmetadata', () => {
           this.setState({
-            songLength: audio.duration + 1,
             songArtist: res.data.song_artist,
             songTitle: res.data.song_title,
             songAlbum: res.data.song_album,
@@ -55,7 +54,7 @@ class MusicPlayer extends React.Component {
             userComment: res.data.user_comment,
             songRelease: res.data.song_release,
             songTags: res.data.song_tags,
-            songLength: res.data.song_length,
+            songLength: audio.duration,
             songThumbnail: res.data.song_thumbnail,
             songID: 1,
             songPlay: false
@@ -103,7 +102,7 @@ class MusicPlayer extends React.Component {
 
   measureSongDuration(songLength) {
     const mins = Math.floor(songLength / 60);
-    const secs = (songLength - mins * 60).toString().substr(0, 2);
+    const secs = (songLength - mins * 60).toString().substr(0, 1);
     const duration = `${mins}:${secs < 10 ? '0' + secs : secs}`;
     return duration;
   }
