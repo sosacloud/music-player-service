@@ -27,9 +27,9 @@ for (let i = 0; i <= 99; i++) {
     song_title: `${faker.random.word()} ${faker.random.word()}`,
     song_album: `${faker.random.word()} ${faker.random.word()}`,
     song_url: songs[randomNum(0, 10)],
-    user: faker.internet.userName(), // use comments-service
-    user_comment: faker.lorem.sentence(), // use comments-service
-    song_release: faker.date.past(), // should render 'X days ago'
+    user: faker.internet.userName(),
+    user_comment: faker.lorem.sentence(),
+    song_release: faker.date.past(),
     song_tags: `${faker.random.word()}`,
     song_length: faker.random.number({ min: 60, max: 360 }),
     song_thumbnail: faker.image.abstract()

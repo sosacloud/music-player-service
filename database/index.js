@@ -7,7 +7,7 @@ const db = new Sequelize('SoSaCloud', 'root', '', {
 
 db.authenticate()
   .then(() => {
-    console.log('database is connected');
+    console.log('music-player-service database is connected');
   })
   .catch(err => {
     throw err;
@@ -19,13 +19,13 @@ const Songs = db.define(
     song_artist: Sequelize.STRING,
     song_title: Sequelize.STRING,
     song_album: Sequelize.STRING,
-    song_url: Sequelize.STRING, // AWS S3
-    user: Sequelize.STRING, // call to Juan's service
-    user_comment: Sequelize.STRING, // call to Juan's service
-    song_release: Sequelize.DATE,
+    song_url: Sequelize.STRING,
+    user: Sequelize.STRING, // use comments-service
+    user_comment: Sequelize.STRING, // use comments-service
+    song_release: Sequelize.DATE, // should render 'X days ago' on client
     song_tags: Sequelize.STRING,
-    song_length: Sequelize.INTEGER, // make sure to render proper format on client side using styling or VanillaJS
-    song_thumbnail: Sequelize.STRING // AWS S3
+    song_length: Sequelize.INTEGER,
+    song_thumbnail: Sequelize.STRING
   },
   {
     timestamps: false
