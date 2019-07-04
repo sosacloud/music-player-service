@@ -23,15 +23,15 @@ const randomNum = (min, max) => {
 // generates one hundred rows of dummy song data
 for (let i = 0; i <= 99; i++) {
   db.Songs.create({
-    song_artist: faker.internet.userName(),
-    song_title: faker.lorem.words(),
+    song_artist: faker.random.word(),
+    song_title: `${faker.random.word()} ${faker.random.word()}`,
     song_album: `${faker.random.word()} ${faker.random.word()}`,
-    song_url: songs[randomNum(0, 10)], // AWS S3 url
-    user: faker.internet.userName(), // use Juan service
-    user_comment: faker.lorem.sentence(), // use Juan service
-    song_release: faker.date.past(), // X days ago
+    song_url: songs[randomNum(0, 10)],
+    user: faker.internet.userName(), // use comments-service
+    user_comment: faker.lorem.sentence(), // use comments-service
+    song_release: faker.date.past(), // should render 'X days ago'
     song_tags: `${faker.random.word()}`,
-    song_length: faker.random.number({ min: 60, max: 360 }), // render nice date format on client
+    song_length: faker.random.number({ min: 60, max: 360 }),
     song_thumbnail: faker.image.abstract()
   });
 }
