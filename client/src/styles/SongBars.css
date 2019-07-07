@@ -1,0 +1,30 @@
+.bars {
+  display: flex;
+  transform: rotateX(180deg);
+}
+
+.bars:hover > * {
+  cursor: pointer;
+  background: #ffffff;
+}
+
+.bar {
+  width: 3px;
+  background: rgb(213, 211, 211);
+  border-right: 1px solid #808080;
+  margin-top: 1.3px;
+}
+
+.bars-inverse {
+  display: flex;
+}
+
+.bars-inverse:hover {
+  cursor: pointer;
+}
+
+.bar-inverse {
+  width: 3px;
+  background: rgb(186, 184, 184);
+  border-right: 1px solid #808080;
+}

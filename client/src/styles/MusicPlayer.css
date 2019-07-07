@@ -120,3 +120,8 @@
   position: absolute;
   z-index: 1;
 }
+
+.song-bars {
+  grid-column: 2 / 6;
+  grid-row: 4 / 5;
+}

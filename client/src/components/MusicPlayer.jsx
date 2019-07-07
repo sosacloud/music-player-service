@@ -10,6 +10,15 @@ class MusicPlayer extends React.Component {
   constructor(props) {
     super(props);
 
+    const barGenerator = () => {
+      let bars = [];
+      for (let i = 0; i <= 240; i++) {
+        const bar = Math.floor((Math.random() + 1) * 35);
+        bars.push(bar);
+      }
+      return bars;
+    };
+
     this.state = {
       songArtist: '',
       songTitle: '',
@@ -25,13 +34,15 @@ class MusicPlayer extends React.Component {
       songCurrentTime: 0,
       songPlay: false,
       songButton:
-        'https://music-player-service.s3-us-west-1.amazonaws.com/play-button.png'
+        'https://music-player-service.s3-us-west-1.amazonaws.com/play-button.png',
+      songBars: barGenerator()
     };
 
     this.getSong = this.getSong.bind(this);
     this.clickPlay = this.clickPlay.bind(this);
     this.measureSongDuration = this.measureSongDuration.bind(this);
     this.measureCurrentDuration = this.measureCurrentDuration.bind(this);
+    this.skipToTime = this.skipToTime.bind(this);
   }
 
   componentDidMount() {
@@ -102,7 +113,9 @@ class MusicPlayer extends React.Component {
 
   measureSongDuration(songLength) {
     const mins = Math.floor(songLength / 60);
-    const secs = (songLength - mins * 60).toString().substr(0, 1);
+    const secs = Math.floor(songLength - mins * 60)
+      .toString()
+      .substr(0, 2);
     const duration = `${mins}:${secs < 10 ? '0' + secs : secs}`;
     return duration;
   }
@@ -114,6 +127,13 @@ class MusicPlayer extends React.Component {
       currentSec < 10 ? '0' + currentSec : currentSec
     }`;
     return currentDuration;
+  }
+
+  skipToTime(time) {
+    audio.currentTime = time * (this.state.songLength / 241);
+    this.setState({
+      currentTime: audio.currentTime
+    });
   }
 
   render() {
@@ -155,8 +175,16 @@ class MusicPlayer extends React.Component {
               {this.measureSongDuration(this.state.songLength)}
             </div>
 
-            <div>
-              <SongBars />
+            <div className={'song-bars'}>
+              <SongBars
+                songBars={this.state.songBars}
+                songLength={this.state.songLength}
+                songCurrentTime={this.state.songCurrentTime}
+                songPlay={this.state.songPlay}
+                measureSongDuration={this.measureSongDuration}
+                measureCurrentDuration={this.measureCurrentDuration}
+                skipToTime={this.skipToTime}
+              />
             </div>
           </div>
         </div>
