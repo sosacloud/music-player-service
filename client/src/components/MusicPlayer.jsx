@@ -1,6 +1,7 @@
 import React from 'react';
 import css from '../styles/MusicPlayer.css';
 import axios from 'axios';
+import TimeAgo from 'react-timeago';
 
 import SongBars from './SongBars.jsx';
 
@@ -170,7 +171,7 @@ class MusicPlayer extends React.Component {
           <img className="song-thumbnail" src={this.state.songThumbnail} />
 
           <div className={'date-tag-grid'}>
-            <div className={'song-release'}>{this.state.songRelease}</div>
+            <TimeAgo className={'song-release'} date={this.state.songRelease} />
           </div>
 
           <div className={'date-tag-grid'}>
