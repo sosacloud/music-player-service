@@ -53,7 +53,7 @@ class MusicPlayer extends React.Component {
     axios
       .get(`/api/songs/1`)
       .then(res => {
-        console.log('RES DATA', res.data);
+        // console.log('RES DATA', res.data);
         audio = new Audio(res.data['song_url']);
         audio.addEventListener('loadedmetadata', () => {
           this.setState({
