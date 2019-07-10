@@ -2,7 +2,10 @@
 
 ## try it out!
 
-- play some songs [here](https://music-player-service.herokuapp.com/) :smiley:
+- `git clone` this repo
+- `npm install` in terminal
+- `npm run dev` in terminal
+- click [this](http://localhost:3003/) to open in browser
 
 ## requirements
 
@@ -12,13 +15,3 @@
 - Faker middleware logic seeds database with mock data
 - AWS S3 manages and stores songs for demonstration
 - proxy renders services from a three person team on a single page
-
-## diagrams
-
-#### app overview:
-
-- in progress
-
-#### database schema:
-
-- in progress
