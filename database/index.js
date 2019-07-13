@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-const db = new Sequelize('SoSaCloud', 'root', '', {
+const db = new Sequelize('SoSaCloud', 'root', 's1c4o8t7t', {
   host: 'localhost',
   dialect: 'mysql'
 });
@@ -14,8 +14,7 @@ db.authenticate()
   });
 
 const Songs = db.define(
-  'Songs',
-  {
+  'Songs', {
     song_artist: Sequelize.STRING,
     song_title: Sequelize.STRING,
     song_album: Sequelize.STRING,
@@ -26,12 +25,13 @@ const Songs = db.define(
     song_tags: Sequelize.STRING,
     song_length: Sequelize.INTEGER,
     song_thumbnail: Sequelize.STRING
-  },
-  {
+  }, {
     timestamps: false
   }
 );
 
 db.sync();
 
-module.exports = { Songs };
+module.exports = {
+  Songs
+};
