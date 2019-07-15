@@ -39,7 +39,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-timeago": "^4.4.0",
-    "sequelize": "^5.10.0"
+    "sequelize": "^5.10.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
@@ -50,6 +50,6 @@
     "css-loader": "^3.0.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.6"
   }
 }
