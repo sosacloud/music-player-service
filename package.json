@@ -5,7 +5,7 @@
   "main": "./client/index.jsx",
   "engines": {
     "node": ">= 12.6.0",
-    "npm": ">= 6.10.1"
+    "npm": ">= 6.10.2"
   },
   "scripts": {
     "db:dev": "mysql -u root < schema.sql",
