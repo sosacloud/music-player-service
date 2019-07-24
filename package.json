@@ -3,18 +3,13 @@
   "version": "1.0.0",
   "description": "music player service for SoundCloud song page",
   "main": "./client/index.jsx",
-  "engines": {
-    "node": ">= 12.6.0",
-    "npm": ">= 6.10.2"
-  },
   "scripts": {
     "db:dev": "mysql -u root < schema.sql",
     "seed:dev": "node database/seed.js",
     "start:dev": "nodemon server/index.js",
     "build:dev": "webpack -d --watch",
     "dev": "concurrently \"npm run db:dev\" \"npm run seed:dev\" \"npm run start:dev\" \"npm run build:dev\"",
-    "start": "node server/index.js",
-    "heroku-postbuild": "webpack -p"
+    "start": "node server/index.js"
   },
   "repository": {
     "type": "git",
