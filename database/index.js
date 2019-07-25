@@ -1,8 +1,10 @@
 const Sequelize = require('sequelize');
+const { database, user, password } = require('./auth');
 
-const db = new Sequelize('SoSaCloud', 'root', '', {
+const db = new Sequelize(database, user, password, {
+  dialect: 'mysql',
   host: 'localhost',
-  dialect: 'mysql'
+  port: '3306'
 });
 
 db.authenticate()

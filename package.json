@@ -4,7 +4,7 @@
   "description": "music player service for SoundCloud song page",
   "main": "./client/index.jsx",
   "scripts": {
-    "db:dev": "mysql -u root < schema.sql",
+    "db:dev": "mysql -u root -p < schema.sql",
     "seed:dev": "node database/seed.js",
     "start:dev": "nodemon server/index.js",
     "build:dev": "webpack -d --watch",
