@@ -3,7 +3,7 @@ const { database, user, password } = require('./auth');
 
 const db = new Sequelize(database, user, password, {
   dialect: 'mysql',
-  host: 'localhost',
+  host: '172.17.0.2',
   port: '3306'
 });
 
