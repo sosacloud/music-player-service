@@ -37,6 +37,7 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+*.pem
 
 # ide - vscode
 .vscode/*
