@@ -12,4 +12,4 @@
 - Express serves up the app && routes API requests
 - Faker seeds a hundred records of mock Songs data
 - Sequelize ORM creates a MySQL instance to store Songs
-- Docker && AWS EC2 both handle service deployment
+- Docker && AWS EC2 both handle deployment of app service
