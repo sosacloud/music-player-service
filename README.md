@@ -2,16 +2,14 @@
 
 ## try it out!
 
-- `git clone` this repo
-- `npm install` in terminal
-- `npm run dev` in terminal
-- click [this](http://localhost:3003/) to open in browser
+- play a song [here](http://ec2-13-56-150-152.us-west-1.compute.amazonaws.com/) :smiley:
 
 ## requirements
 
-#### a music player service for SoundCloud song page, where:
+#### a music player service for the SoundCloud song page, where:
 
-- React handles views and logic for music player streaming
-- Faker middleware logic seeds database with mock data
-- AWS S3 manages and stores songs for demonstration
-- proxy renders services from a three person team on a single page
+- React renders views && logic for music player streaming
+- Express serves up the app && routes API requests
+- Faker seeds a hundred records of mock Songs data
+- Sequelize ORM creates a MySQL instance to store Songs
+- Docker && AWS EC2 both handle service deployment
