@@ -2,7 +2,7 @@
 
 ## try it out!
 
-- play a song [here](http://ec2-13-56-150-152.us-west-1.compute.amazonaws.com/) :smiley:
+- play a song [here](http://ec2-13-56-150-152.us-west-1.compute.amazonaws.com) :smiley:
 
 ## requirements
 
