@@ -34,7 +34,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-timeago": "^4.4.0",
-    "sequelize": "^5.12.3"
+    "sequelize": "^5.15.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
