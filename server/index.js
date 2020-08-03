@@ -18,10 +18,10 @@ app.get('/api/songs/:id', (req, res) => {
   const id = req.params.id;
   // console.log('THIS IS ID', req.params.id);
   db.Songs.findByPk(id)
-    .then(data => {
+    .then((data) => {
       res.send(data).status(200);
     })
-    .catch(err => {
+    .catch((err) => {
       res.send(err).status(500);
     });
 });
@@ -29,5 +29,5 @@ app.get('/api/songs/:id', (req, res) => {
 const PORT = process.env.PORT || 3003;
 
 app.listen(PORT, () => {
-  console.log(`music-player-service is listening on ${PORT}`);
+  console.log(`Listening on http://localhost:${PORT}`);
 });
