@@ -6,7 +6,7 @@
 
 ## requirements
 
-#### a music player service for the SoundCloud song page, where:
+#### music player service for the SoundCloud song page, where:
 
 - React renders views && logic for music player streaming
 - Express serves up the app && routes API requests
